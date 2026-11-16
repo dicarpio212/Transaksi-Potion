@@ -1,0 +1,646 @@
+:root {
+  --warnautama: #f2f2f2;
+  --warnabgnav: #0e0e0e;
+  --warnabgnavaktif: #272727;
+  --hometheme: #9150f9;
+  --fontfamily: "Lilita One", sans-serif;
+  --fontcoc: "CCBackBeat W00 Light";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+}
+
+body {
+  background-color: var(--warnautama);
+}
+
+/* Navbar */
+#navBar {
+  box-sizing: border-box;
+  /* width: 18rem; */
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--warnabgnav);
+  padding: 1rem;
+  transition: 0.2s linear;
+}
+
+#navBar.fit {
+  /* width: 6rem; */
+  width: 7%;
+}
+
+#navBar .stylemullet {
+  border-radius: 12px;
+}
+
+#navBar .user {
+  box-sizing: border-box;
+  width: 100%;
+  color: white;
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+#navBar .user.fit {
+  padding: 1.2rem 0;
+  justify-content: center;
+}
+
+#navBar .user h1 {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+
+#navBar .user h1.fit {
+  display: none;
+}
+
+#navBar .user img {
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+}
+
+#navBar .user img.fit {
+  display: none;
+}
+
+#navBar .user svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 0.7rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 8px;
+}
+
+#navBar .user svg:hover {
+  background-color: var(--warnabgnavaktif);
+}
+
+#navBar .buttons {
+  box-sizing: border-box;
+  margin-top: 2rem;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navBar .buttons button {
+  width: 100%;
+  padding: 1.2rem 0.8rem;
+  background-color: var(--warnabgnav);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+#navBar .buttons button:hover,
+#navBar .buttons button.active {
+  background-color: var(--warnabgnavaktif);
+}
+
+#navBar .buttons button.fit {
+  justify-content: center;
+  padding: 1.2rem 0;
+}
+
+#navBar .buttons button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+#navBar .buttons button svg.active {
+  animation: masuk 0.2s linear;
+}
+
+#navBar .buttons button h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 0.7rem;
+}
+
+#navBar .buttons button h1.fit {
+  display: none;
+}
+
+#navBar .buttons button h1.active {
+  animation: masuk 0.2s linear;
+}
+
+@keyframes masuk {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Header */
+header {
+  width: calc(100% - 20%);
+  height: 7rem;
+  box-sizing: border-box;
+  margin-left: 20%;
+  transition: 0.2s linear;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 18rem;
+  grid-template-areas: "saldo pencarian";
+  gap: 5rem;
+  align-items: center;
+}
+
+header.fit {
+  width: calc(100% - 7%);
+  margin-left: 7%;
+}
+
+header .saldo {
+  grid-area: saldo;
+  width: auto;
+  box-sizing: border-box;
+  padding-left: 0.7rem;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+header .saldo span {
+  color: white;
+  -webkit-text-stroke: 1.7px rgb(0, 0, 0);
+  font-family: "Lilita One", sans-serif;
+  text-shadow: 1.5px 1.5px 1px black;
+}
+
+header .saldo .tambahSaldo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  margin-left: 1rem;
+  color: white;
+  background-color: var(--warnabgnav);
+  cursor: pointer;
+}
+
+header .search {
+  grid-area: pencarian;
+  position: relative;
+  margin-right: 4rem;
+}
+
+header .search input {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--warnautama);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 0.1s linear;
+}
+
+header .search input.active {
+  transform: scaleY(1);
+}
+
+header .search input[type="search"]::-webkit-search-cancel-button {
+  position: absolute;
+  right: 0.8rem;
+  color: black;
+}
+
+header .search .searchIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  z-index: 999;
+  position: absolute;
+  top: 0.3rem;
+  right: -2rem;
+  display: block;
+  cursor: pointer;
+}
+
+/* Content */
+/* Home */
+section#Home {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  width: calc(100% - 20%);
+  height: auto;
+  margin-left: 20%;
+  margin-top: 7rem;
+  transition: 0.2s linear;
+}
+
+section#Home.fit {
+  width: calc(100% - 7%);
+  margin-left: 7%;
+}
+
+section#Home .logoInventory {
+  display: flex;
+  align-items: center;
+  margin-left: 1.7rem;
+  margin-top: 8.7rem;
+}
+
+section#Home .logoInventory svg {
+  background-color: var(--hometheme);
+  padding: 0.5rem;
+  border-radius: 15px;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+section#Home .logoInventory h1 {
+  font-size: 1.9rem;
+  margin-left: 0.5rem;
+}
+
+section#Home .filterPotion {
+  margin-top: 1.4rem;
+  margin-left: 1.7rem;
+  font-size: 1.4rem;
+  display: flex;
+}
+
+section#Home .filterPotion select {
+  margin-left: 0.3rem;
+}
+
+section#Home .inventory {
+  width: 95%;
+  box-sizing: border-box;
+  border: 1px solid var(--warnabgnavaktif);
+  margin: 1.7rem auto 0 auto;
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 6rem);
+  gap: 1rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px var(--warnabgnavaktif);
+}
+
+section#Home .inventory .kartu {
+  width: 100%;
+  height: 6rem;
+  box-sizing: border-box;
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px black;
+  position: relative;
+}
+
+section#Home .inventory .kartu svg {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  fill: white;
+  transition: 0.1s linear;
+}
+section#Home .inventory .kartu svg:hover {
+  transform: scale(1.15);
+}
+
+section#Home .inventory .kartu .gambarPotionInventory {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+section#Home .inventory .kartu .gambarPotionInventory img {
+  width: 118%;
+  height: 118%;
+  border-radius: 10px;
+  position: relative;
+  top: -9px;
+  left: -9px;
+  background-color: var(--warnautama);
+}
+
+section#Home .inventory .kartu .stokPotionInventory {
+  width: 100%;
+  font-family: "Lilita One", sans-serif;
+  height: 29%;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.347);
+  line-height: 1.7rem;
+  text-align: center;
+  color: white;
+  border-radius: 50% 50% 10px 10px;
+  text-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.754);
+}
+
+/* Tampilan Info */
+
+section#infoSection {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.541);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9;
+}
+
+section#infoSection.active {
+  display: block;
+}
+
+section#infoSection .tampilanPotion {
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  margin: 3vh auto;
+  display: grid;
+  grid-template-columns: minmax(20rem, 33rem) 1fr;
+  grid-template-rows: 5rem 1fr;
+  grid-template-areas: "judul judul" "gambar info";
+  position: relative;
+  padding: 1rem;
+  background-image: linear-gradient(#635552, #7b4635);
+  column-gap: 1rem;
+  border-radius: 15px;
+}
+
+section#infoSection .tampilanPotion .tutupTampilanPotion {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: "Lilita One", sans-serif;
+  font-size: 1.7rem;
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+  background-color: #e42125;
+  border-radius: 9px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  z-index: 1;
+  box-shadow: 0 0 2px black;
+  cursor: pointer;
+}
+
+section#infoSection .tampilanPotion .tutupTampilanPotion::after {
+  content: "";
+  width: 1.7rem;
+  height: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.462);
+  border-radius: 4px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  z-index: -1;
+}
+
+section#infoSection .tampilanPotion .tutupTampilanPotion:active {
+  box-shadow: 0 0 0 black;
+  transform: scale(0.85);
+}
+
+section#infoSection .tampilanPotion .iconDeskripsiInfoPotion {
+  position: absolute;
+  top: 1rem;
+  right: 4.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-family: "Lilita One", sans-serif;
+  font-size: 1.7rem;
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+  background-color: #0490f4;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  z-index: 1;
+  cursor: pointer;
+  box-shadow:
+    inset 0 -2px 0 1px rgba(255, 255, 255, 0.556),
+    0 0 2px black;
+}
+
+section#infoSection .tampilanPotion .iconDeskripsiInfoPotion:active {
+  box-shadow: 0 0 0 black;
+  transform: scale(0.85);
+}
+
+section#infoSection .tampilanPotion .judulPotion {
+  grid-area: judul;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.7rem;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.754);
+  font-family: "Lilita One", sans-serif;
+}
+
+section#infoSection .tampilanPotion .gambarPotion {
+  grid-area: gambar;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: white;
+  border: 7px solid #c6c3c6;
+}
+
+section#infoSection .tampilanPotion .gambarPotion img {
+  width: 107%;
+  height: 107%;
+  position: relative;
+  top: -10px;
+  left: -20px;
+}
+
+section#infoSection .tampilanPotion .infoPotion {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-area: info;
+  border-radius: 20px;
+  background-color: white;
+  border: 7px solid #c6c3c6;
+  transition: 0.3s linear;
+  position: relative;
+}
+
+section#infoSection .tampilanPotion .infoPotion.active {
+  transform: rotateY(180deg);
+}
+
+section#infoSection .tampilanPotion .infoPotion .cardInfo {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(2, minmax(12rem, 1fr));
+  grid-template-rows: repeat(auto-fit, 7rem);
+  gap: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.38rem 0.6rem;
+}
+
+section#infoSection .tampilanPotion .infoPotion .cardInfo .cardTampilanInfo {
+  width: 100%;
+  height: 100%;
+  background-color: #ededed;
+  box-sizing: border-box;
+  border: 4px solid rgb(165, 165, 165);
+  border-radius: 7px;
+  box-shadow: 0 2px 0 rgb(54, 54, 54);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.9rem;
+}
+
+section#infoSection
+  .tampilanPotion
+  .infoPotion
+  .cardInfo
+  .cardTampilanInfo.active {
+  display: none;
+}
+
+section#infoSection
+  .tampilanPotion
+  .infoPotion
+  .cardInfo
+  .cardTampilanInfo
+  span {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  -webkit-text-stroke: 1.7px rgb(0, 0, 0);
+  text-shadow: 0 2px 3px rgb(0, 0, 0);
+  font-family: var(--fontfamily);
+}
+
+section#infoSection .tampilanPotion .infoPotion .cardInfo .cardTampilanInfo h2 {
+  color: black;
+  font-size: 1rem;
+  font-family: var(--fontcoc);
+}
+
+section#infoSection .tampilanPotion .infoPotion .deskripsiInfoPotion {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: 0.2s linea;
+}
+
+section#infoSection .tampilanPotion .infoPotion .deskripsiInfoPotion.active {
+  display: block;
+  transform: rotateY(-180deg);
+}
+
+section#infoSection .tampilanPotion .infoPotion .deskripsiInfoPotion h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-family: var(--fontfamily);
+  font-size: 3rem;
+  color: white;
+  -webkit-text-stroke: 1.7px rgb(0, 0, 0);
+  text-shadow: 0 2px 3px rgb(0, 0, 0);
+}
+
+section#infoSection .tampilanPotion .infoPotion .deskripsiInfoPotion span {
+  height: 90%;
+  font-family: var(--fontcoc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  font-size: 1.4rem;
+}
+
+/* Media queries */
+@media (max-width: 1180px) {
+  /* Navbar */
+
+  body {
+    min-height: calc(auto + 18%);
+  }
+  #navBar {
+    width: 14.8rem;
+  }
+
+  #navBar.fit {
+    width: 6rem;
+  }
+
+  /* Header */
+  header {
+    width: calc(100% - 14.8rem);
+    margin-left: 14.8rem;
+  }
+  header.fit {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+  }
+
+  /* Content */
+  /* Home */
+
+  section#Home {
+    width: calc(100% - 14.8rem);
+
+    margin-left: 14.8rem;
+  }
+
+  section#Home.fit {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+  }
+}
