@@ -9,7 +9,7 @@ Website ini adalah website yang mengimplementasi cara kerja javascript DOM menyi
 dalam website ini, ada beberapa fitur yang ditambahkan seperti:
 
 ## filter
-Jika kita menekan filter pada Filter Potion seperti contoh gambar di bawah ini:
+Jika kita menekan filter pada Filter Potion:
 <img width="1917" height="907" alt="Screenshot 2026-11-16 084205" src="https://github.com/user-attachments/assets/87e52ed9-7184-4a09-a881-2b41ebf08666" />
 
 maka kita dapat melihat option filter yang tampil setelahnya.
@@ -46,7 +46,8 @@ Pilih salah satu, dan list potion akan berubah mengikuti. Setidaknya ada 9 kateg
 
 
 ## Detail Informasi
-jika kita menekan ikon lingkaran dengan tanda "i" didalamnya seperti yang tampil di bawah ini:
+jika kita menekan ikon lingkaran dengan tanda "i" didalamnya:
+
 <img width="414" height="268" alt="Screenshot 2026-11-16 103252" src="https://github.com/user-attachments/assets/d4979e20-7b8a-46e7-9800-a87382772acf" />
 
 Maka kita akan melihat informasi detail mengenai Spell.
@@ -57,6 +58,28 @@ Jika ingin melihat deskripsi lengkap dari spell, kita dapat menekan tombol "i" y
 
 maka akan tampilan informasi tambahan berupa deskripsi spell.
 <img width="1762" height="851" alt="image" src="https://github.com/user-attachments/assets/ed1d3887-e296-4d25-bb0b-d35ce520b1f9" />
+
+## Search
+Jika kita menekan tombol search:
+<img width="1917" height="910" alt="Screenshot 2026-11-16 111732" src="https://github.com/user-attachments/assets/7e3a01c5-0d2c-416f-bcdb-2d3e12a12d94" />
+
+maka kita bisa memunculkan kolom search.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0a646a2d-4626-47f7-aa8c-6c000803b6f9" />
+
+ketik apa saja, dan potion langsung tersortir berdasarkan nama potion
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ca166b6-19f4-43ce-9fb5-1e838fde97ec" />
+
+## Tambah Gold
+klik tombol plus ("+"):
+
+<img width="535" height="143" alt="Screenshot 2026-11-16 112358" src="https://github.com/user-attachments/assets/6d87badb-c6b7-4ea7-ac35-74d8a6357e6e"/>
+
+Dan gold akan bertambah sebanyak 300.
+
+<img width="506" height="146" alt="image" src="https://github.com/user-attachments/assets/fb18ed9b-2fa3-4883-b3d4-a9616a69ecf4" />
+
+
+
 
 
 Meskipun memiliki banyak tampilan dan fitur, website ini merupakan website uji coba yang saya buat murni untuk melihat alur manipulasi DOM. Semua fitur tersebut sengaja saya buat untuk menguji interaksi dan perubahan DOM secara langsung. Oleh karena itu, saya akan terus mengembangkan website ini hingga ke tahap yang lebih stabil, rapi, dan siap digunakan dalam versi 2.0.
